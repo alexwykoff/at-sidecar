@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "AT-Sidecar - The Unofficial Bluesky Chat Extension",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://bsky.app/*"],
+      "js": ["simplepeer.min.js", "content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [{
+    "resources": ["simplepeer.min.js"],
+    "matches": ["https://bsky.app/*"]
+  }]
+} 
